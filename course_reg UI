@@ -1,1 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Registration System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: 30px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 20px;
+            margin: 10px 5px;
+            background: #3498db;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: #2980b9;
+        }
+        .section {
+            display: none;
+            margin-top: 20px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background: #3498db;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>Course Registration System</header>
+
+    <div class="container">
+        <a class="btn" onclick="showSection('admin')">Admin Login</a>
+        <a class="btn" onclick="showSection('student')">Student Login</a>
+
+        <!-- Admin Login Section -->
+        <div id="admin" class="section">
+            <h2>Admin Login</h2>
+            <input type="text" placeholder="Enter Admin Username">
+            <input type="password" placeholder="Enter Password">
+            <a class="btn">Login</a>
+        </div>
+
+        <!-- Student Login Section -->
+        <div id="student" class="section">
+            <h2>Student Login</h2>
+            <input type="number" placeholder="Enter Student ID">
+            <a class="btn">Login</a>
+        </div>
+
+        <!-- Courses Section -->
+        <div id="courses" class="section">
+            <h2>Available Courses</h2>
+            <table>
+                <tr><th>Course ID</th><th>Course Name</th><th>Action</th></tr>
+                <tr><td>101</td><td>Data Structures</td><td><button class="btn">Register</button></td></tr>
+                <tr><td>102</td><td>OOP in C++</td><td><button class="btn">Register</button></td></tr>
+                <tr><td>103</td><td>DBMS</td><td><button class="btn">Register</button></td></tr>
+            </table>
+        </div>
+
+    </div>
+
+<script>
+    function showSection(id) {
+        document.querySelectorAll('.section').forEach(sec => sec.style.display = 'none');
+        document.getElementById(id).style.display = 'block';
+    }
+</script>
+</body>
+</html>
 
